@@ -1,10 +1,5 @@
 package com.cput.traabcobusinessplatform.users.dto;
 
-
-
-
-
-
 /**
  * Represents the data a new user submits when creating an account.
  * This is an inbound DTO — it comes from the client, never from the server.
@@ -14,7 +9,7 @@ package com.cput.traabcobusinessplatform.users.dto;
  */
 
 
-import com.cput.traabcobusinessplatform.users.enums.UserRole
+import com.cput.traabcobusinessplatform.users.enums.UserRole;
 import lombok.Getter;
 import lombok.Setter;
 

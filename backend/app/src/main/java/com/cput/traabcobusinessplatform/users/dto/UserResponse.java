@@ -11,4 +11,5 @@ package com.cput.traabcobusinessplatform.users.dto;
  * a successful register, login, or any user lookup endpoint.
  */
 public class UserResponse {
+
 }

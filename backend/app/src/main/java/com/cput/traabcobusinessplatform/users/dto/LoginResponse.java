@@ -1,7 +1,6 @@
 package com.cput.traabcobusinessplatform.users.dto;
 
 
-
 /**
  * Represents the data a returning user submits when logging in.
  * This is an inbound DTO — it comes from the client, never from the server.
