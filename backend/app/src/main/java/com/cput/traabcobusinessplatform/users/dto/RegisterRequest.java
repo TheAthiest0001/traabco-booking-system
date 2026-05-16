@@ -3,8 +3,6 @@ package com.cput.traabcobusinessplatform.users.dto;
 
 
 
-
-
 /**
  * Represents the data a new user submits when creating an account.
  * This is an inbound DTO — it comes from the client, never from the server.
@@ -14,26 +12,29 @@ package com.cput.traabcobusinessplatform.users.dto;
  */
 
 
-import com.cput.traabcobusinessplatform.users.enums.UserRole
+import com.cput.traabcobusinessplatform.users.enums.UserRole;
 import lombok.Getter;
 import lombok.Setter;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Getter
 @Setter
 public class RegisterRequest {
-
+    @NotBlank(message = "Full name is required")
     private String fullName;
+
+
+    @Email(message = "Must be a valid email address")
+    @NotBlank(message = "Email is required")
     private String email;
+
+    @NotBlank(message = "Password is required")
     private String password;
 
+    @NotNull(message = "Role is required")
     private UserRole role;
-
-   public void validate(){
-       if (fullName == null || fullName.trim().isEmpty()){
-
-       }
-   }
-
 
 
 }
