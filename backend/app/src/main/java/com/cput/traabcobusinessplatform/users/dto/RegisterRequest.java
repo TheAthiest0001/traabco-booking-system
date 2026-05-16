@@ -10,6 +10,9 @@ package com.cput.traabcobusinessplatform.users.dto;
 
 
 import com.cput.traabcobusinessplatform.users.enums.UserRole;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,18 +20,21 @@ import lombok.Setter;
 @Setter
 public class RegisterRequest {
 
+    @NotBlank(message = "Full name is required")
     private String fullName;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     private String email;
+
+    @NotBlank(message = "Password is required")
     private String password;
 
+   @NotNull(message = "Role is required")
     private UserRole role;
 
-   public void validate(){
-       if (fullName == null || fullName.trim().isEmpty()){
-
-       }
    }
 
 
 
-}
+
