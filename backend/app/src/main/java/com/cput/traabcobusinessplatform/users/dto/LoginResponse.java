@@ -14,7 +14,7 @@ import lombok.Getter;
 public class LoginResponse {
 
     private final String accessToken;
-    private final String okenType;
+    private final String tokenType;
     private final UserResponse user;
 
 }
