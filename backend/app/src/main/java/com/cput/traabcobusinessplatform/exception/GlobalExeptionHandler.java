@@ -42,6 +42,7 @@ public class GlobalExeptionHandler {
             return this;
         }
     }
+
     /// 400 validation
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

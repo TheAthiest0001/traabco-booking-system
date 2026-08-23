@@ -1,8 +1,8 @@
 package com.cput.traabcobusinessplatform.users.service.impl;
-/**
- * Muso Nkuntsu*/
 
 import com.cput.traabcobusinessplatform.config.JwtUtil;
+import com.cput.traabcobusinessplatform.exception.GlobalExeptionHandler;
+import com.cput.traabcobusinessplatform.exception.UserNotFoundException;
 import com.cput.traabcobusinessplatform.users.domain.UserEntity;
 import com.cput.traabcobusinessplatform.users.dto.LoginRequest;
 import com.cput.traabcobusinessplatform.users.dto.RegisterRequest;
@@ -16,6 +16,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Muso Nkuntsu
+ * Implementation of UserService.
+ * All business logic lives here — hashing passwords,
+ * validating credentials, generating tokens, and
+ * mapping between entities and DTOs.
+ */
+
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -27,8 +36,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse registerUser(RegisterRequest request){
-        if (UserRepository.existsByEmail(request.getEmail()))
-            throw new RuntimeException("Email already exists: " + request.getEmail()); {
+
+        if (userRepository.existsByEmail(request.getEmail())){
+            throw new RuntimeException("Email already exists: " + request.getEmail());
         }
         UserEntity user = userMapper .toEntity(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
