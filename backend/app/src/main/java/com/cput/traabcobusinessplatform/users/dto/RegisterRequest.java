@@ -9,7 +9,7 @@ package com.cput.traabcobusinessplatform.users.dto;
  */
 
 
-import com.cput.traabcobusinessplatform.users.enums.UserRole;
+import com.cput.traabcobusinessplatform.users.domain.enums.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

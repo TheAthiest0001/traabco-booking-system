@@ -1,4 +1,4 @@
-package com.cput.traabcobusinessplatform.users.enums;
+package com.cput.traabcobusinessplatform.users.domain.enums;
 
 
 public enum UserRole {
